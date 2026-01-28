@@ -18,3 +18,20 @@ def verificador_palabra(palabra_ingresada, palabra_secreta):
             letras_verificadas.append(palabra_ingresada[i])
     
     return letras_verificadas
+
+# definir la cantidad de intentos = variable
+intentos = 0
+
+while intentos < 6:
+    print(f"Te quedan {6 - intentos} intentos")
+    intentos = intentos + 1
+    palabra_ingresada = input("\nIngrese una palabra: ")
+    print(f"\nLa palabra ingresada es: {palabra_ingresada}")
+    respuesta = verificador_palabra(palabra_ingresada, palabra_secreta)
+    print(respuesta)
+
+    if palabra_ingresada == palabra_secreta:
+        print("\nAcertaste la palabra. GANASTE")
+        break
+    elif intentos == 6:
+        print("\nLlegaste al limite de intentos. PERDEDOR")
